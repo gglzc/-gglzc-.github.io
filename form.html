@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width , initial-scale=1">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+  
+        input[type=text],textarea{
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius:4px;
+            box-sizing: border-box;
+            margin-top: 6px ;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        
+        input[type=submit]{
+            background-color: #04AA5D;
+            color:white;
+            padding : 12px 22px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type=submit]:hover{
+            background-color: #45a049;
+        }
+
+        .container{
+            border-radius: 6px;
+            background-color: azure;
+            padding: 20px;
+        }
+    
+    </style>
+  </head>
+  <body>
+    <h1 >林內消防隊點餐系統</h1>
+      <div class="container">
+        <form id="myform">
+            <label for="name">名字</label>
+            <input type="text" id="name"  name="名字" placeholder="輸入名字">
+
+            <label for="number">號碼</label>
+            <input type="text" id="number"  name="號碼"   placeholder="輸入號碼">
+
+            <label for="order">訂單</label>
+            <textarea id="order" name="訂單" placeholder="請輸入要的選項 例如:招牌"></textarea>
+
+            <label for="ps">備註</label>
+            <input type="text"  id="ps" name="備註" placeholder="備註 ex:飯少">
+            
+            <input type="submit" value="送出訂單" name="submit" id="submitbutton">
+
+        </form>
+      </div>
+            <script>
+               function getValues(){
+                 var name=document.getElementById("name");
+                 var number=document.getElementById("number");
+                 var order= document.getElementById("order");
+                 var ps=document.getElementById("ps");
+                 
+                 var rowData={
+                    name:name.value,
+                    number:number.value,
+                    order:order.value,
+                    ps:ps.value
+                 } 
+               
+               google.script.run.addData(rowData);
+
+               document.getElementById("myform").reset();
+
+               alert("謝謝訂購，麻煩聽候廣播！！");
+            }
+
+            document.getElementById("submitButton").addEventListener("click",getValues);
+            </script>
+    </body>
+</html>
+
+
+
+ 
