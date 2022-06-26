@@ -48,9 +48,6 @@
             <label for="name">名字</label>
             <input type="text" id="name"  name="名字" placeholder="輸入名字">
 
-            <label for="number">號碼</label>
-            <input type="text" id="number"  name="號碼"   placeholder="輸入號碼">
-
             <label for="order">訂單</label>
             <textarea id="order" name="訂單" placeholder="請輸入要的選項 例如:招牌"></textarea>
 
@@ -64,13 +61,11 @@
             <script>
                function getValues(){
                  var name=document.getElementById("name");
-                 var number=document.getElementById("number");
                  var order= document.getElementById("order");
                  var ps=document.getElementById("ps");
                  
                  var rowData={
                     name:name.value,
-                    number:number.value,
                     order:order.value,
                     ps:ps.value
                  } 
